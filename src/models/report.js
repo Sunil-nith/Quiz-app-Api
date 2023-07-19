@@ -4,7 +4,7 @@ const reportSchema = mongoose.Schema({
 
     userId: {
         type: mongoose.Types.ObjectId,
-        // required: true,
+        required: true,
         
       },
      
@@ -12,6 +12,11 @@ const reportSchema = mongoose.Schema({
         type: mongoose.Types.ObjectId,
         required: true,
         
+      },
+      quizCreatedBy:{
+        type: mongoose.Types.ObjectId,
+        required: true,
+
       },
       score: {
         type: Number,

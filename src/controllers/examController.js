@@ -1,6 +1,6 @@
 const quizModel = require("../models/quiz");
 const reportModel =require("../models/report");
-const { ObjectId } = require('mongodb');
+
 
 
 const startExam = async (req, res) =>{
@@ -28,22 +28,18 @@ const submitExam = async (req, res) => {
   
       const quiz = await quizModel.findById(quizId,{
         answers:1,
+        userId:1,
         _id:0
       });
       
-      
+      const quizCreatedBy = quiz.userId;
       const answers = quiz.answers;
       const userId = req.userId;
       const allQuestions = Object.keys(answers);
       const total = allQuestions.length;
       console.log(userId);
      
-      
-     
-      
-      
-  
-      let score = 0;
+     let score = 0;
   
       for (let i = 0; i < total; i++) {
         let question_number = allQuestions[i]
@@ -55,7 +51,7 @@ const submitExam = async (req, res) => {
         }
       }
   
-      const newReport = new reportModel({ userId, quizId, score, total });
+      const newReport = new reportModel({ userId, quizId,quizCreatedBy, score, total });
       const data = await newReport.save();
       const resp = {
         status: "success",
