@@ -216,13 +216,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbXNtQGdtYWlsLmNvbSIsImlkIjoiNjRiNzk1NGRhMDJiYmQ3OGFlMDU5MmFjIiwiaWF0IjoxNjg5NzY5NTQxLCJleHAiOjE2ODk3ODc1NDF9.SD0aVUYTGosUsEkCKYkV-lTUtofyaIbjEVl9OXAfC3Q",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n   \r\n    \"attempted_question\":{\r\n        \"1\":4,\r\n        \"2\":3\r\n    }\r\n}",
+					"raw": "{\r\n   \r\n    \"attempted_question\":{\r\n        \"1\":1,\r\n        \"2\":2\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -230,14 +230,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/exam/64b796d0a02bbd78ae0592ca",
+					"raw": "localhost:3000/exam/{{quizId}}",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"exam",
-						"64b796d0a02bbd78ae0592ca"
+						"{{quizId}}"
 					]
 				}
 			},

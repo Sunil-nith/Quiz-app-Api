@@ -1,7 +1,7 @@
 # Quiz-app-Api
 
 * Quiz-app-API is a RESTful API designed to power a quiz app, where users can create and share quizzes, and participants can take those quizzes and be awarded scores based on their results.
-* The API supports user authentication and Authorization.
+* The API supports user Authentication and Authorization.
 
 ### Built With
 
