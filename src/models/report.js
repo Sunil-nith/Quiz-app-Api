@@ -4,13 +4,10 @@ const reportSchema = mongoose.Schema({
 
     userId: {
         type: mongoose.Types.ObjectId,
-        required: true,
+        // required: true,
         
       },
-      userEmail : {
-        type : String,
-        required: true
-    },
+     
       quizId: {
         type: mongoose.Types.ObjectId,
         required: true,

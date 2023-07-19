@@ -81,7 +81,7 @@ const deleteQuiz = async (req, res) => {
         await quizModel.deleteOne({ _id: quizId });
         res.json({ message: 'Quiz deleted successfully' });
     } catch (error) {
-        res.status(500).json({ message: "An error occurred while deleting this Quiz" });
+        res.status(500).json({ message: "An error occurred while deleting the Quiz" });
 
     }
 }
