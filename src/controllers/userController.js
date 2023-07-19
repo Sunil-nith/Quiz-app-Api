@@ -22,8 +22,10 @@ const signup = async (req, res) =>{
             username: username
         });
 
-        const token = jwt.sign({email : result.email, id : result._id }, SECRET_KEY);
-        res.status(201).json({user: result, token: token});
+        const token = jwt.sign({email : result.email, id : result._id }, SECRET_KEY,{
+            expiresIn: "5h"
+        });
+        res.status(201).json({message:"User Registration Successfull",useremail:result.email, token: token});
         
     } catch (error) {
         console.log(error);
@@ -50,8 +52,10 @@ const signin = async (req, res)=>{
         }
         
 
-        const token = jwt.sign({email : existingUser.email, id : existingUser._id },SECRET_KEY );
-        res.status(200).json({user: existingUser, token: token});
+        const token = jwt.sign({email : existingUser.email, id : existingUser._id },SECRET_KEY,{
+            expiresIn: "5h"
+        } );
+        res.status(200).json({message:"User Signin Successfull",useremail: existingUser.email, token: token});
 
 
     } catch (error) {
