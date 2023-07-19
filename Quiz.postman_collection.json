@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "e6f14e22-14d9-452a-b018-bfda543764c3",
+		"name": "Quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28159028"
+	},
+	"item": [
+		{
+			"name": "User Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"sanjeev\",\r\n    \"email\": \"ramm@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"sanjeev\",\r\n    \"email\": \"ramm@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Quiz",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Gk Quiz 102\",\r\n    \"questions_list\": [\r\n        {\r\n            \"question_number\": 1,\r\n            \"question\": \"What is the capital of India?\",\r\n            \"options\": {\r\n                \"1\": \"Bangalore\",\r\n                \"2\": \"Lucknow\",\r\n                \"3\": \"Rajasthan\",\r\n                \"4\": \"New Delhi\"\r\n            }\r\n        },\r\n        {\r\n            \"question_number\": 2,\r\n            \"question\": \"How many players are there in cricket team?\",\r\n            \"options\": {\r\n                \"1\": \"1\",\r\n                \"2\": \"2\",\r\n                \"3\": \"11\",\r\n                \"4\": \"20\"\r\n            }\r\n        }\r\n    ],\r\n    \"answers\": {\r\n        \"1\": 4,\r\n        \"2\": 3\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quiz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quizs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/quiz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Quiz",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quiz/{{quizId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz",
+						"{{quizId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Quiz",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/quiz/{{quizId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz",
+						"{{quizId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Exam",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/exam/{{quizId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exam",
+						"{{quizId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Exam",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbXNtQGdtYWlsLmNvbSIsImlkIjoiNjRiNzk1NGRhMDJiYmQ3OGFlMDU5MmFjIiwiaWF0IjoxNjg5NzY5NTQxLCJleHAiOjE2ODk3ODc1NDF9.SD0aVUYTGosUsEkCKYkV-lTUtofyaIbjEVl9OXAfC3Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"attempted_question\":{\r\n        \"1\":4,\r\n        \"2\":3\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/exam/64b796d0a02bbd78ae0592ca",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"exam",
+						"64b796d0a02bbd78ae0592ca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Your Result",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/result",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"result"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quiz Result",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/result/{{quizId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"result",
+						"{{quizId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

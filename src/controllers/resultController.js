@@ -1,7 +1,5 @@
 const reportModel = require("../models/report");
 
-
-
 const getYourResult = async (req, res) => {
     try {
         const userId = req.userId;
@@ -11,7 +9,6 @@ const getYourResult = async (req, res) => {
             score: 1,
             total: 1,
         });
-
         if (!quizResults || quizResults.length === 0) {
             return res.status(404).json({ message: "You haven't taken any exams" });
         } else {
@@ -23,7 +20,6 @@ const getYourResult = async (req, res) => {
     }
 };
 
-
 const getQuizResult = async (req, res) => {
     try {
         const quizId = req.params.quizId;
@@ -34,7 +30,6 @@ const getQuizResult = async (req, res) => {
             score: 1,
             total: 1,
         });
-
         if (!quizResults || quizResults.length === 0) {
             return res.status(404).json({ message: "No quiz results found for the given quizId" });
         }
@@ -48,8 +43,5 @@ const getQuizResult = async (req, res) => {
         res.status(500).json({ message: 'Something went wrong' });
     }
 };
-
-
-
 
 module.exports = { getYourResult, getQuizResult }

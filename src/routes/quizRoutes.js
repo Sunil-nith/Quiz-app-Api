@@ -3,13 +3,9 @@ const {createQuiz,getQuizs,updateQuiz,deleteQuiz} = require("../controllers/quiz
 const auth = require("../middlewares/auth");
 const quizRouter = express.Router();
 
-
-
 quizRouter.post("/", auth, createQuiz);
 quizRouter.get("/", auth, getQuizs);
 quizRouter.put("/:quizId",auth,updateQuiz);
 quizRouter.delete("/:quizId", auth, deleteQuiz);
-
-
 
 module.exports = quizRouter;
