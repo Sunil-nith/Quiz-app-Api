@@ -12,7 +12,7 @@
 * JWT Authentication
 
 ## Features
-* - A user (creator)should be able to log in and create multiple quizzes.
+* A user (creator)should be able to log in and create multiple quizzes.
 * User should be able to share the quiz with other.
 * Others (participants)can take the quiz, using the link shared by the creator and will be awarded score based one the results.
 * The creator should be able to view the list of participants and their scores.
@@ -50,7 +50,7 @@ Before running the application, make sure you have the following prerequisites i
 2. Run the Puppeteer script:
 ```sh
    npm start
-
+   ```
 
 
 ## Contributing
