@@ -13,9 +13,12 @@
 
 ## Features
 * A user (creator)should be able to log in and create multiple quizzes.
+* User should be able to update and delete the quiz.
 * User should be able to share the quiz with other.
 * Others (participants)can take the quiz, using the link shared by the creator and will be awarded score based one the results.
 * The creator should be able to view the list of participants and their scores.
+* Proper secure and safe Password Hashing system using bcrypt.
+* User authentication and Authorization using JWT Authentication.
 * Easy setup: The application is built using Node.js, which makes it easy to install and run on any system.
 
 ## Prerequisites
