@@ -44,13 +44,13 @@ Before running the application, make sure you have the following prerequisites i
 
 ## Usage
 
-* To run the Puppeteer automation script, follow these steps:
+* To run the Server, follow these steps:
 1. Navigate to the project directory:
 ```sh
    cd Quiz-app-Api
    ```
 
-2. Run the Puppeteer script:
+2. Run the Srever:
 ```sh
    npm start
    ```
